@@ -1,0 +1,19 @@
+<p>parent works!</p>
+<div>My Tasks</div>
+<div class="input-container">
+  <input type="text" name="task" id="task" class="input-field" placeholder="Enter task here.." [(ngModel)]="newTask">
+  <button class="input-button" [disabled]="newTask ===''">Add</button>
+</div>
+<p>{{newTask}}</p>
+
+<ul>
+  <li class="ggg">My Tasks</li>
+  <li>
+    <input type="text" class="inInput" placeholder="Enter task here.." [(ngModel)]="inn" #data>
+    <button class="inButton" (click)="addTask(data.value); data.value=''" [disabled]="!inn">Add</button>
+  </li>
+</ul>
+
+<ul *ngFor="let item of task">
+  <li>{{item.name}}<button class="delete" (click)="removeTask(item.id)">Remove</button></li>
+</ul>
